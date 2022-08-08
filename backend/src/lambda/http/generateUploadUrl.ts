@@ -1,7 +1,7 @@
 import 'source-map-support/register'
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda'
 import { createLogger } from '../../utils/logger'
-import { createAttachmentPresignedUrl, updateAttachmentUrl } from '../../helpers/todos'
+import { createAttachmentPresignedUrl, updateAttachmentUrl } from '../../businessLogic/todos'
 import { getUserId } from '../utils'
 import { v4 as uuid } from 'uuid'
 
