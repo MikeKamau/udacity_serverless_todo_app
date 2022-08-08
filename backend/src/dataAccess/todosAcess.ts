@@ -4,8 +4,6 @@ import { TodoItem } from '../models/TodoItem'
 import { TodoUpdate } from '../models/TodoUpdate'
 import { createLogger } from '../utils/logger'
 
-
-
 const logger = createLogger('TodosAccess')
 
 export class TodosAccess {
