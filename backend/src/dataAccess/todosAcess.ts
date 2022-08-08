@@ -5,10 +5,11 @@ import { TodoUpdate } from '../models/TodoUpdate'
 import { createLogger } from '../utils/logger'
 
 const logger = createLogger('TodosAccess')
-
+const AWSXRay = require('aws-xray-sdk')
+const XAWS = AWSXRay.captureAWS(require('aws-sdk'))
 export class TodosAccess {
   constructor(
-    private readonly docClient: DocumentClient = new DocumentClient(),
+    private readonly docClient: DocumentClient = new XAWS.DynamoDB.DocumentClient(),
     private readonly todosTable = process.env.TODOS_TABLE,
     private readonly TodosByUserIndex = process.env.TODOS_BY_USER_INDEX
   ) {}
